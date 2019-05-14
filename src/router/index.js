@@ -8,6 +8,8 @@ import Fire_controller from '../components/Fire_controller.vue'
 import Header from '../pages/home/components/Header.vue'
 import Aside from '../pages/home/components/Aside.vue'
 import Main from '../pages/home/components/Main.vue'
+import Bottom from '../pages/home/components/Bottom.vue'
+import Right_top from '../pages/home/components/Right_top.vue'
 Vue.use(Router)
 export default new Router({
     routes: [{
@@ -42,5 +44,13 @@ export default new Router({
         path: '/main',
         name: Main,
         component: Main
+    }, {
+        path: '/foot',
+        name: 'Foot',
+        component: Bottom
+    }, {
+        path: '/right_top',
+        name: 'Right_top',
+        component: Right_top
     }]
 })
