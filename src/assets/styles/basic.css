@@ -1,0 +1,10 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0.2) url('/static/img/Home_bg.png');
+    overflow: hidden;
+}
