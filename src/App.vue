@@ -9,5 +9,8 @@ export default {
   name: 'App'
 }
 </script>
-<style>
+<style lang="stylus">
+body, html {
+  font-size: 16px;
+}
 </style>
