@@ -4,15 +4,43 @@
       <img src="/static/img/logoEdition.png">
     </div>
     <div class="header-right">
-      <!--<span class="iconfont">&#xe633;</span> -->
-      <span id="user_name">admin</span>
-      <span id="completeTime">2019年5月13日</span>
-      <span id="currentTime">15:33:24星期一</span>
+      <span id="user_name">{{useName}}</span>
+      <span id="completeTime">{{currentDate}}</span>
+      <span id="currentTime">{{currentTime}}</span>
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      currentDate: '',
+      useName: 'admin',
+      currentTime: ''
+    }
+  },
+  methods: {
+    //获取当前的时间
+    getHanlderTime() {
+      const myDate = new Date()
+      //获取完整的年份
+      const Year = myDate.getFullYear()
+      //获取月份-1
+      const Month = myDate.getMonth()
+      //获取日
+      const date = myDate.getDate()
+      //获取时
+      const Hours = myDate.getHours()
+      //获取分
+      const Minutes = myDate.getMinutes()
+      this.currentDate = Year + '/' + Month + '/' + date
+      this.currentTime = Hours + ':' + Minutes
+    }
+  },
+  mounted() {
+    this.getHanlderTime()
+  }
+}
 </script>
 <style lang="stylus" scoped>
 .header {

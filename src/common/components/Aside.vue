@@ -1,31 +1,40 @@
 <template>
   <div>
     <div class="leftNavigation">
-      <div class="AreaBlock">
-        <img src="/static/img/time.png" id="realTimeMonitoringImg">
-        <div id="realTimeMonitoringImgText">
-          实时监控
+      <router-link to="/index">
+        <div class="AreaBlock">
+          <img src="/static/img/time.png" id="realTimeMonitoringImg">
+          <div id="realTimeMonitoringImgText">
+            实时监控
+          </div>
         </div>
-      </div>
-      <div class="AreaBlock">
-        <img src="/static/img/fireMonitoring.png" id="fireMonitoring">
-        <div id="fireMonitoringText">
-          火灾监控
+      </router-link>
+      <router-link to="/fireMonitor">
+        <div class="AreaBlock">
+          <img src="/static/img/fireMonitoring.png" id="fireMonitoring">
+          <div id="fireMonitoringText">
+            火灾监控
+          </div>
         </div>
-      </div>
-
-      <div class="AreaBlock">
-        <img src="/static/img/electrical.png" id="smartElectricityConsumption" />
-        <div id="smartElectricityConsumptionText">电气火灾</div>
-      </div>
-      <div class="AreaBlock">
-        <img src="/static/img/water.png" id="waterfireFighting" />
-        <div id="waterfireFightingFont">消防用水</div>
-      </div>
-      <div class="AreaBlock">
-        <img src="/static/img/fireAlarmController.png" id="fireAlarmController" />
-        <div id="fireAlarmControllerText">火灾报警控制器</div>
-      </div>
+      </router-link>
+      <router-link to="/electrical">
+        <div class="AreaBlock">
+          <img src="/static/img/thunder.png" id="smartElectricityConsumption" />
+          <div id="smartElectricityConsumptionText">电气火灾</div>
+        </div>
+      </router-link>
+      <router-link to="/water">
+        <div class="AreaBlock">
+          <img src="/static/img/water.png" id="waterfireFighting" />
+          <div id="waterfireFightingFont">消防用水</div>
+        </div>
+      </router-link>
+      <router-link to="/fireController">
+        <div class="AreaBlock">
+          <img src="/static/img/fireAlarmController.png" id="fireAlarmController" />
+          <div id="fireAlarmControllerText">火灾报警控制器</div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -50,6 +59,7 @@ export default {}
   .AreaBlock {
     width: 100%;
     height: 16%;
+    cursor: pointer;
 
     #realTimeMonitoringImg {
       position: absolute;
@@ -64,7 +74,7 @@ export default {}
       width: 51px;
       height: 50px;
       left: 27%;
-      top: 73.65%;
+      top: 66%;
     }
 
     #waterfireFighting {
@@ -132,9 +142,8 @@ export default {}
 
     #fireAlarmControllerText {
       position: absolute;
-      left: 21.6%;
-      top: 82%;
-      width: 73px;
+      top: 75%;
+      width: 100%;
       height: 17px;
       font-size: 14px;
       font-family: PingFangSC-Medium;
