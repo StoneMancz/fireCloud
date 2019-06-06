@@ -1,7 +1,17 @@
 <template>
-  <div>用水页面</div>
+  <div>
+    <Header />
+    <Aside />
+  </div>
 </template>
 <script>
-export default {}
+import Header from '../../common/components/Header'
+import Aside from '../../common/components/Aside'
+export default {
+  components: {
+    Header,
+    Aside
+  }
+}
 </script>
 <style lang="stylus" scoped></style>

@@ -1,8 +1,25 @@
 <template>
-  <div>电气火灾</div>
+  <div>
+    <Header></Header>
+    <Aside></Aside>
+    <ElectTop></ElectTop>
+  </div>
 </template>
 <script>
-export default {}
+import Header from '../../common/components/Header'
+import Aside from '../../common/components/Aside'
+import ElectTop from './components/electriTop'
+export default {
+  name: 'electrical',
+  data() {
+    return {}
+  },
+  components: {
+    Header,
+    Aside,
+    ElectTop
+  }
+}
 </script>
 
 <style lang="stylus" scoped></style>

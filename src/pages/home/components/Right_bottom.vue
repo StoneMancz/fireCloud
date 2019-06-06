@@ -7,7 +7,7 @@
         <div id="policeContext">
           <table id="tableTitle"></table>
           <div id="tableCont">
-            <table id="tableCextL" style="border-spacing: 0; border-collapse: collapse; margin-top: 0px; text-align: center; vertical-align: top; border-spacing: 0px 10px;">
+            <table class="tableCextL">
               <thead>
                 <tr style="background-color: #19388c; border: solid 1px #19388c">
                   <th id="addr">安装位置</th>
@@ -16,7 +16,14 @@
                   <th style="width: 100px;">操作</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr v-for="(item,index) in list" :key="index">
+                  <td>{{item.deviceAddr}}</td>
+                  <td>{{item.deviceTypeCode}}</td>
+                  <td>{{item.time}}</td>
+                  <td><button>确认</button></td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div class="pageDiv"></div>
@@ -37,7 +44,7 @@ export default {
     async initList() {
       const api = this.api + '/queryAlarmDetailByArea'
       const data = await this.$http.get(api)
-      data.result.forEach(item => {
+      data.data.result.forEach(item => {
         this.list.push({
           deviceAddr: item.deviceAddr,
           deviceTypeCode: item.deviceTypeCode,
@@ -114,6 +121,32 @@ export default {
       overflow: auto;
       margin-top: 15px;
       margin-left: 0px;
+
+      .tableCextL {
+        border-spacing: 0;
+        border-collapse: collapse;
+        margin-top: 0px;
+        text-align: center;
+        vertical-align: top;
+        border-spacing: 0px 10px;
+        color: rgba(255, 255, 255, 1);
+
+        tbody {
+          tr {
+            td {
+              font-size: 12px;
+              border: 0.5px solid #294E8A;
+
+              button {
+                width: 43px;
+                height: 23px;
+                background: rgba(219, 136, 2, 1);
+                border: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

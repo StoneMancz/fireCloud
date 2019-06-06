@@ -1,8 +1,22 @@
 <template>
-  <div>火灾报警控制器</div>
+  <div>
+    <Header></Header>
+    <Aside></Aside>
+    <HeaderTop></HeaderTop>
+  </div>
 </template>
 <script>
-export default {}
+import Header from '../../common/components/Header'
+import Aside from '../../common/components/Aside'
+import HeaderTop from './components/fireControllerTop'
+export default {
+  name: 'fireController',
+  components: {
+    Header,
+    Aside,
+    HeaderTop
+  }
+}
 </script>
 
 <style lang="stylus" scoped></style>
